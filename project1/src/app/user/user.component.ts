@@ -9,10 +9,14 @@ import { UserService } from "../services/user.service";
 })
 export class UserComponent implements OnInit {
   user: User;
-
+  isPersonalDetailsEditable = true;
   constructor(private userService: UserService) {}
 
   ngOnInit() {
     this.user = this.userService.getUser("1");
+  }
+
+  personalDetailsEditBtnClick(event) {
+    this.isPersonalDetailsEditable = false;
   }
 }
